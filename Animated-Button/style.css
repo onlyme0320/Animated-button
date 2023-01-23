@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background:rgb(8, 55, 73) ;
+    min-height: 100vh;
+}
+a{
+    position: relative;
+    padding: 20px 60px;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    background: rgba(30, 32, 32, 0.5);
+    text-decoration: none;
+    margin: 80px 40px;
+    transition: 1s;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, rgba(20, 18, 18, 0.267));
+}
+   /* For the box shadow(the light that comes up when you hover) */
+
+    a:hover {
+        background: var(--clr);
+        box-shadow: 0 0 10px var(--clr),
+        0 0 30px var(--clr),
+        0 0 60px var(--clr),
+        0 0 100px var(--clr);
+}
+a::before{
+    content: "";
+    position: absolute;
+    height: 400%;
+    width:40px ;
+    background: var(--clr);
+    transition: 1s;
+    animation: animate 2s linear infinite;
+    animation-delay: calc(-0.32sec *var(--1));
+}
+a:hover::before{
+    width: 12%;
+}
+a::after{
+    content: "";
+    position: absolute;
+    inset: 4px;
+    background: #2F4F4F;
+    transition: 0.5s;
+}
+a:hover::after{
+    background: var(--clr);
+}
+@keyframes animate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  span{
+    position: relative;
+    font-size: 2rem;
+    z-index: 1;
+    opacity: 0.5;
+    color: #fff;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+span:hover{
+    opacity: 1;
+}
+.tag{
+    margin-bottom: -620px;
+    color: #fff;
+    margin-right: -20px;
+}
+@media screen and (max-width:475px) {
+    .card:hover{
+      display:flex;
+      flex-direction: column;
+    }
+  }
